@@ -58,7 +58,7 @@ div.circletag>img {
    border-radius: 50%;
 }
 
-table, th, td {
-    border: none;
+table, th, td, tr {
+    border: none !important;
     border-collapse: collapse;
 }
