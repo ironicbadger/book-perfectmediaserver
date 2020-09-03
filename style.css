@@ -1,0 +1,74 @@
+:root {
+    --sidebar-width: 200px;
+    --page-padding: 15px;
+    --content-max-width: 680px;
+    --menu-bar-height: 50px;
+}
+
+@media only screen and (max-width:999px) {
+    .sidetoc {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    main {
+        position: absolute;
+    }
+    .sidetoc {
+        margin-left: auto;
+        margin-right: auto;
+        left: calc(100% + (var(--content-max-width))/4 - 100px);
+        position: absolute;
+    }
+    .pagetoc {
+        position: fixed;
+        width: 200px;
+    }
+    .pagetoc a {
+        border-left: 1px solid var(--sidebar-bg);
+        color: var(--fg);
+        display: block;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+        text-align: left;
+        text-decoration: none;
+    }
+    .pagetoc a:hover,
+    .pagetoc a.active {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-fg);
+    }
+    .pagetoc .active {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-fg);
+    }
+}
+
+.nav-chapters {
+    display: none;
+}
+
+div.circletag {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: #E6E7ED;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+div.circletag>img {
+   max-height: 100%;
+   max-width: 100%;
+   border-radius: 50%;
+}
+
+table, th, td {
+    border: none;
+    border-collapse: collapse;
+}

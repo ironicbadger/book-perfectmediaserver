@@ -1,0 +1,21 @@
+[book]
+authors = ["alexktz"]
+language = "en"
+multilingual = false
+src = "content"
+title = "Perfect Media Server"
+
+[output.html]
+is-print = false
+git-repository-url = "https://github.com/rust-lang/mdBook"
+additional-css = ["style.css"]
+additional-js = ["sidebartoc.js"]
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
