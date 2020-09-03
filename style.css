@@ -1,17 +1,17 @@
 :root {
-    --sidebar-width: 200px;
+    --sidebar-width: 240px;
     --page-padding: 15px;
     --content-max-width: 680px;
     --menu-bar-height: 50px;
 }
 
-@media only screen and (max-width:999px) {
+@media only screen and (max-width:1089px) {
     .sidetoc {
         display: none;
     }
 }
 
-@media only screen and (min-width:1000px) {
+@media only screen and (min-width:1080px) {
     main {
         position: absolute;
     }
