@@ -1,49 +1,39 @@
 :root {
     --sidebar-width: 240px;
     --page-padding: 15px;
-    --content-max-width: 680px;
     --menu-bar-height: 50px;
 }
 
-@media only screen and (max-width:1089px) {
-    .sidetoc {
-        display: none;
-    }
+.content main {
+    max-width: initial;
 }
 
-@media only screen and (min-width:1080px) {
-    main {
-        position: absolute;
-    }
-    .sidetoc {
-        margin-left: auto;
-        margin-right: auto;
-        left: calc(100% + (var(--content-max-width))/4 - 100px);
-        position: absolute;
-    }
-    .pagetoc {
-        position: fixed;
-        width: 200px;
-    }
-    .pagetoc a {
-        border-left: 1px solid var(--sidebar-bg);
-        color: var(--fg);
-        display: block;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        padding-left: 10px;
-        text-align: left;
-        text-decoration: none;
-    }
-    .pagetoc a:hover,
-    .pagetoc a.active {
-        background: var(--sidebar-bg);
-        color: var(--sidebar-fg);
-    }
-    .pagetoc .active {
-        background: var(--sidebar-bg);
-        color: var(--sidebar-fg);
-    }
+.sidetoc {
+    padding-top: var(--page-padding);
+}
+
+.pagetoc {
+    position: fixed;
+}
+
+.pagetoc a:first-child {
+    padding-left: 10px;
+}
+
+.pagetoc a {
+    border-left: 1px solid var(--sidebar-bg);
+    color: var(--fg);
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.pagetoc a:hover,
+.pagetoc a.active {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-fg);
 }
 
 .nav-chapters {

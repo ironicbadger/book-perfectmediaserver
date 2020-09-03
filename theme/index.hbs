@@ -18,7 +18,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="{{ description }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" /> 
+        <meta name="theme-color" content="#ffffff" />
 
         <link rel="icon" href="{{ path_to_root }}favicon.svg">
         <link rel="shortcut icon" href="{{ path_to_root }}favicon.png">
@@ -42,6 +42,8 @@
         {{#each additional_css}}
         <link rel="stylesheet" href="{{ ../path_to_root }}{{ this }}">
         {{/each}}
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap-grid.min.css" integrity="sha512-pkOzvsY+X67Lfs6Yr/dbx+utt/C90MITnkwx8X5fyKkBorWHJLlR3TmgNJs83URAR0GdejZZnjZdgYjzL/mtcQ==" crossorigin="anonymous" />
 
         {{#if mathjax_support}}
         <!-- MathJax -->
@@ -168,11 +170,12 @@
                 </script>
 
                 <div id="content" class="content">
-                    <main>
+                    <main class="row">
                         <!-- Page table of contents -->
-                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
-
-                        {{{ content }}}
+                        <div class="page-content col-md-8 offset-md-1 col-xs-12 col-lg-6 offset-lg-2">
+                            {{{ content }}}
+                        </div>
+                        <div class="sidetoc col-md-3"><nav class="pagetoc"></nav></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
