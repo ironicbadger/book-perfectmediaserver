@@ -6,6 +6,11 @@
 
 .content main {
     max-width: initial;
+    line-height: 1.6;
+}
+
+.page-content {
+    max-width: 1400px;
 }
 
 .sidetoc {

@@ -1,3 +1,8 @@
+// open external links as target=_blank
+$(document.links).filter(function() {
+    return this.hostname != window.location.hostname;
+}).attr('target', '_blank');
+
 // Un-active everything when you click it
 Array.prototype.forEach.call(document.getElementsByClassName("pagetoc")[0].children, function(el, i) {
     el.addEventHandler("click", function() {
