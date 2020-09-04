@@ -14,6 +14,12 @@ The potential scope of this project could be vast. There are many flavours of Li
 
 Perfect Media Server began life as a series of blog posts over at [blog.linuxserver.io](https://blog.linuxserver.io/tag/perfectmediaserver/). Those posts continue to be very popular, but with so much information to be communicated something with search and a table of contents was needed.
 
+You can find the previous incarnations of PMS below:
+
+- [Perfect Media Server (2016 Edition) - The Original Article](https://blog.linuxserver.io/2016/02/02/the-perfect-media-server-2016/)
+- [Perfect Media Server (2017 Edition) - Extensive video guides](https://blog.linuxserver.io/2017/06/24/the-perfect-media-server-2017/)
+- [Perfect Media Server (2019 Edition) - Boring is reliable + adding ZFS](https://blog.linuxserver.io/2019/07/16/perfect-media-server-2019/)
+
 I am no longer involved with LSIO, so it seemed like a good idea to put all of this information in one place and provid it in an open-source format. This site is created using [mdbook](https://github.com/rust-lang/mdBook) and PRs will be gladly considered via Github (using the icon in the top right) if you'd like to correct something here or share your own pearls of wisdom.
 
 ## About the Author
