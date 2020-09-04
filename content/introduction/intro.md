@@ -12,7 +12,7 @@ The potential scope of this project is vast. There are many flavours of Linux, m
 
 Perfect Media Server began life as a series of blog posts over at [blog.linuxserver.io](https://blog.linuxserver.io/tag/perfectmediaserver/). Those posts continue to be very popular, but with so much information to be communicated something with search and a table of contents was needed.
 
-I am no longer involved with LSIO, so it seemed like a good idea to put all of this information in one place and provided in an open-source format. This site is created using [mdbook](https://github.com/rust-lang/mdBook) and PRs will be gladly considered via Github (using the icon in the top right) if you'd like to correct something here or share your own pearls of wisdom.
+I am no longer involved with LSIO, so it seemed like a good idea to put all of this information in one place and provid it in an open-source format. This site is created using [mdbook](https://github.com/rust-lang/mdBook) and PRs will be gladly considered via Github (using the icon in the top right) if you'd like to correct something here or share your own pearls of wisdom.
 
 ## About the Author
 

@@ -8,12 +8,15 @@ ZFS is more than just a filesystem. It merges parity calculation, data integrity
 
 Catastrophic performance implications or even data loss can occur with incorrectly architected pools. Mismatched drive sizes are not a good idea and ideally you don't want to match drives of vastly differing performance characteristics either. Therefore the common wisdom is that when building out a ZFS pool you must build that pool (or vdev) as big as you think you'll need it and usually this means buying 4+ drives at a time. This can quickly become very expensive.
 
+## Purpose
+
 Let's also consider the purpose of the average home file server, the audience this article is largely aimed at. Most folks will probably have some media files that are easily replaced and then a second class of data which is irreplaceable. This irreplaceable data such as photographs, a music collection, documents, drone footage and so on is what I use ZFS to store. Everything else, the ephemeral 'Linux ISO' collection is stored using mergerfs and is protected against drive failures with SnapRAID. (SnapRAID is not backup!).
 
 Technically, mergerfs doesn't actually store anything. It provides a transparent layer that sits over the top of each data disk and merges them together under a single mountpoint. Data is stored on each individual filesystem in a JBOD fashion and is not striped nor is it checked for integrity. mergerfs also does not provide mitigation for drive failure, this is where SnapRAID comes in. It is used to calculate a snapshot of parity across all data drives that are not using ZFS. The ZFS drives are configured in a mirror and take care of their own parity and data integrity checks.
 
 It's best to think of these two classes of storage as entirely separate entities that handle their own redundancy and happen to be connected via mergerfs. In reality, they have nothing whatsoever to do with each other.
-Drive layout
+
+## Drive layout
 
 It's time for an example. Below is an /etc/fstab entry that we will use to merge the filesystems mounted at /mnt/disk* as well as the ZFS datasets mounted at /mnt/tank/fuse. These are arbitrary paths and can be adjusted to your use case or dataset names.
 
