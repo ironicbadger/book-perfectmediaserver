@@ -1,4 +1,4 @@
-name: deploy on vps
+name: deploy pms-book to vps
 
 on:
   push:
@@ -11,10 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Read .env
+        id: mdbook-version
+        run: |
+            . ./.env
+            echo "::set-output name=MDBOOK_VERSION::${MDBOOK_VERSION}"
+
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
-          mdbook-version: '0.4.2'
+            mdbook-version: '${{ steps.mdbook-version.outputs.MDBOOK_VERSION }}'
 
       - run: mdbook build
 
