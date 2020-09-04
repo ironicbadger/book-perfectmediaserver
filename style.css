@@ -6,7 +6,17 @@
 
 .content main {
     max-width: initial;
-    line-height: 1.6;
+}
+
+.content p { line-height: 1.8em; }
+.content ol { line-height: 1.8em; }
+.content ul { line-height: 1.8em; }
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    font-size: 1.65rem;
+    overflow-x: hidden;
 }
 
 .page-content {
