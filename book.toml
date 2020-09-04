@@ -7,7 +7,7 @@ title = "Perfect Media Server"
 
 [output.html]
 is-print = false
-git-repository-url = "https://github.com/rust-lang/mdBook"
+git-repository-url = "https://github.com/IronicBadger/book-perfectmediaserver"
 additional-css = ["style.css"]
 additional-js = ["sidebartoc.js"]
 
