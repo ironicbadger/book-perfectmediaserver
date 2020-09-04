@@ -4,9 +4,11 @@ If you're looking to build a media server, then you've come to the right place. 
 
 The primary technologies we recommend are [Linux](https://www.linux.org/), Containers (via [docker](https://www.docker.com/) and managed using [docker-compose](https://docs.docker.com/compose/)), [Proxmox](https://www.proxmox.com/en/), [MergerFS](https://github.com/trapexit/mergerfs/), [SnapRAID](http://www.snapraid.it/) and [ZFS on Linux](https://zfsonlinux.org/).
 
-We cover the software side of building a server, there are plenty of other great resources for hardware such as [serverbuilds.net](https://serverbuilds.net). 
+## The aims of this site
 
-The potential scope of this project is vast. There are many flavours of Linux, many hypervisors and so on. Therefore, in order that this documentation remains manageable, we only cover a small subset of the options available. However, using the knowledge and thought patterns behind our decisions here you will leave armed with the ability to build your own DIY NAS or as we like to call it, the Perfect Media Server.
+This site covers the software side of building a server, there are plenty of other great resources for hardware such as [serverbuilds.net](https://serverbuilds.net). There is a short hardware section but this more aimed at sharing lessons learned than it is recommending specific builds.
+
+The potential scope of this project could be vast. There are many flavours of Linux, many hypervisors and so on. Therefore, in order that this documentation remains manageable, we only cover a small subset of the options available. However, using the knowledge and thought patterns behind our decisions here you will leave armed with the ability to build your own DIY NAS or as we like to call it, the Perfect Media Server.
 
 ## About the series
 
