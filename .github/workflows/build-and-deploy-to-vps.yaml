@@ -26,7 +26,7 @@ jobs:
             PORT: ${{ secrets.PORT }}
             KEY: ${{ secrets.SSHKEY }}
         with:
-            source: "."
+            source: "./book/"
             target: "/opt/appdata/book-perfectmediaserver"
 
       - name: Executing remote command
