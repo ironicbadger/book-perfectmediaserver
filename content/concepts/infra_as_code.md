@@ -6,11 +6,11 @@ This simple philosophy of managing configuration in the same way as we do with s
 
 ## Make it easy
 
-Readers frequently ask me "Which GUI do you recommend for docker?" and my answer is always `docker-compose`, which understandably confuses folks as this isn't a GUI at all (see [Management GUIs](./management_guis.md) for some GUI options). This opinion is born out of countless times rebuilding boxes both of my own and of others. 
+Readers frequently ask me "Which GUI do you recommend for docker?" and my answer is always `docker-compose`, which understandably confuses folks as this isn't a GUI at all (see [Management GUIs](./management_guis.md) for some options). This opinion is born out of countless times rebuilding boxes both of my own and of others. 
 
 If you've used a GUI you'll be able to relate to the tedium of clicking and typing over and over again, often having to guess at the required input and having no way other than *screenshots* to remember what you did. GUIs might feel as if they make the initial set up of a system easier but in the long run, they will bite you and are more difficult to maintain.
 
-Put yourself in the shoes of a friendly internet stranger. The one helping you with something via a Discord chat or forum post to fix a problem with one of your containers. It's likely they'll have to ask you to share the parameters used when creating that container. At some point, they're likely to ask you for a screenshot of the web interface of your NAS software or to paste a `docker-compose` yaml snippet. The yaml snippet is easier for you to share, easier for others to read and debug and also means you can't forget the variables used when creating that container. Reverse engineering a random `docker run` command from 6 months ago or deciphering someone elses UI you've never seen before is no fun. Most of these folks are giving up their spare time to help you, so make it *easy* for them!
+Particularly when we're new, we rely on the help of others. Others who help you via a Discord chat or forum post to fix a problem with one of your containers. It's likely they'll have to ask you to share the parameters used when creating that container. At some point, they'll ask you for a screenshot of the web interface of your NAS software or to paste a `docker-compose` yaml snippet. The yaml snippet is not only easier for you to share, but also easier for others to read and debug too. It also means you can't forget the variables used when creating that container. Reverse engineering a random `docker run` command from 6 months ago or deciphering someone elses UI you've never seen before is no fun. Most of these folks are giving up their spare time to help you, so make it as *easy as possible for them*!
 
 ## Disaster Recovery
 
