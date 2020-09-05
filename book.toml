@@ -5,6 +5,9 @@ multilingual = false
 src = "content"
 title = "Perfect Media Server"
 
+[build]
+create-missing = false
+
 [output.html]
 is-print = false
 git-repository-url = "https://github.com/IronicBadger/book-perfectmediaserver"
