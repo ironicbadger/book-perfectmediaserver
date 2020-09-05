@@ -42,7 +42,7 @@ I am no longer involved with LSIO, so it seemed like a good idea to put all of t
   </div>
   <div class="col-sm-8">
 
-The Perfect Media Server is written and maintained by [Alex Kretzschmar](https://www.linkedin.com/in/alex-kretzschmar/) (aka [@IronicBadger](https://twitter.com/ironicbadger)). Alex is a Red Hatter by day and a giant nerd by night.
+The Perfect Media Server is written and maintained by [Alex Kretzschmar](https://www.linkedin.com/in/alex-kretzschmar/) (aka [@IronicBadger](https://twitter.com/ironicbadger)) plus some totally awesome [contributors](https://github.com/IronicBadger/infra/graphs/contributors). Alex is a Red Hatter by day and a giant nerd by night.
 
 If you like this kind of thing, check out the [Self-Hosted](https://selfhosted.show) podcast over at [Jupiter Broadcasting](https://jupiterbroadcasting.com).
 
