@@ -4,11 +4,21 @@ If you're looking to build a media server, then you've come to the right place. 
 
 The primary technologies we recommend are [Linux](https://www.linux.org/), Containers (via [docker](https://www.docker.com/) and managed using [docker-compose](https://docs.docker.com/compose/)), [Proxmox](https://www.proxmox.com/en/), [MergerFS](https://github.com/trapexit/mergerfs/), [SnapRAID](http://www.snapraid.it/) and [ZFS on Linux](https://zfsonlinux.org/).
 
-## The aims of this site
+<div class="row">
+  <div class="col-sm-8">
+<p>Use the navigation on the left or the search in the top right to find your way around. If you found this site useful, please consider a small token of appreciation via 'buy me a coffee'.</p>
+  </div>
+  <div class="col-sm">
+    <br />
+    <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#FFFFFF !important;background-color:#FF813F !important;border-radius: 8px !important;border: 1px solid transparent !important;font-size: 24px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#FFFFFF !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/alexktz"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:24px !important;">Buy me a coffee</span></a>
+  </div>
+</div>
 
-This site covers the software side of building a server, there are plenty of other great resources for hardware such as [serverbuilds.net](https://serverbuilds.net). There is a short hardware section but this more aimed at sharing lessons learned than it is recommending specific builds.
+## The aim of this site
 
-The potential scope of this project could be vast. There are many flavours of Linux, many hypervisors and so on. Therefore, in order that this documentation remains manageable, we only cover a small subset of the options available. However, using the knowledge and thought patterns behind our decisions here you will leave armed with the ability to build your own DIY NAS or as we like to call it, the Perfect Media Server.
+To share knowledge and information regarding the software side of building a media server. There are plenty of other great resources for hardware such as [serverbuilds.net](https://serverbuilds.net). There is a short hardware section which covers some basics for those who are totally new to all this.
+
+The potential scope of this project could be vast. There are many flavours of Linux, many hypervisors and so on. Therefore, in order that this documentation remains manageable, we only cover a small subset of the options available. However, by sharing the knowledge and thought patterns used to drive our decisions, you will leave armed with the ability to build your own DIY NAS or as we like to call it, the Perfect Media Server.
 
 ## About the series
 
@@ -24,21 +34,18 @@ I am no longer involved with LSIO, so it seemed like a good idea to put all of t
 
 ## About the Author
 
-<table cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td><div class="circletag" id="nay">
-                    <img src="../images/alex.jpg">
-                </div>
-            </td>
-            <td rowspan=2>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="circletag" id="nay">
+        <img src="../images/alex.jpg">
+    </div>
+  </div>
+  <div class="col-sm-8">
 
 The Perfect Media Server is written and maintained by [Alex Kretzschmar](https://www.linkedin.com/in/alex-kretzschmar/) (aka [@IronicBadger](https://twitter.com/ironicbadger)). Alex is a Red Hatter by day and a giant nerd by night.
 
 If you like this kind of thing, check out the [Self-Hosted](https://selfhosted.show) podcast over at [Jupiter Broadcasting](https://jupiterbroadcasting.com).
 
 I also write technical posts over on my blog at [blog.ktz.me](https://blog.ktz.me) covering topics from Openshift to Terraform to electronics to Home Automation.
-            </td>
-        </tr>
-    </tbody>
-</table>
+  </div>
+</div>
