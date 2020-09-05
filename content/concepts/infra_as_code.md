@@ -28,6 +28,8 @@ Storing configuration as code is a simple concept but requires some discipline -
 
 For example, let's say you deploy a server using automation and then begin to make manual changes to it. Before long the code no longer reflects what is deployed and "configuration drift" begins to occur. Reconciliation can often be frustrating and time consuming. When adopting Infrastructure as Code, every single change should be made via a configuration management tool such as Ansible. This sounds daunting but the alternative is a special snowflake you are scared to touch. We've all had that install we're scared to format because we aren't sure quite what we'll lose if we do.
 
+Now that we've drilled into you why Infrastructure as Code is so useful, it's time to investigate two of the primary tools used in practice. They are Ansible and Terraform.
+
 # Ansible
 
 ![ansible-logo](../images/ansible_logo_wide.png)
@@ -35,3 +37,12 @@ For example, let's say you deploy a server using automation and then begin to ma
 Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code.
 
 # Terraform
+
+![terraform-logo](../images/terraform_logo_wide.png)
+
+# Which one should I use?
+
+I get this question a lot. It's true, there is a huge overlap between Ansible and Terraform but they both *excel* in different areas. So I tend to delineate between two like this.
+
+Terraform creates the infrastructure. Ansible configures the infrastructure.
+
