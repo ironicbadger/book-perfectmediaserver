@@ -1,18 +1,24 @@
 # Top 10 Self-Hosted apps
 
-One of the requirements for an always-on system in my house is that it must *do* something. Storing and serving files is all well and good but with a little effort, we can replace dozens of hosted services that don't respect your privacy. We can also save a little money too by bringing this stuff in house.
+Storing and serving files is all well and good but with a little effort, we can replace dozens of hosted services that don't respect your privacy. Here are some of my favourite self-hosted app picks.
+
+> If you like this kind of thing, check out the [Self-Hosted](https://selfhosted.show) podcast over at [Jupiter Broadcasting](https://jupiterbroadcasting.com).
+
+<div class="d-flex justify-content-center">
+<iframe src="https://fireside.fm/player/v2/dUlrHQih+c60wLQ-X?theme=dark" width="740" height="200" frameborder="0" scrolling="no"></iframe>
+</div>
 
 ## 1. Nextcloud
 
-<a href="https://nextcloud.com/" title="Nextcloud" target="_blank" rel="noopener noreferrer nofollow">Nextcloud</a> - The self-hosted productivity platform that keeps you in control.
+[Nextcloud](https://nextcloud.com/) - The self-hosted productivity platform that keeps you in control.
 
-Surely this pick needs no introduction. Think of Nextcloud somewhat like your own personal Dropbox replacement. Although, that is doing it a disservice because Nextcloud supports *many* more features than Dropbox. Nextcloud provide a <a href="https://try.nextcloud.com/" title="Try Nextcloud" target="_blank" rel="noopener noreferrer nofollow">demo</a> if you'd like to try before you "buy".
+Surely this pick needs no introduction. Think of Nextcloud somewhat like your own personal Dropbox replacement. Although, that is doing it a disservice because Nextcloud supports *many* more features than Dropbox. Nextcloud provide a [demo](https://nextcloud.com/try) if you'd like to try before you "buy" (Nextcloud is free).
 
-The recently launched <a href="https://nextcloud.com/hub/" title="Nextcloud Hub" target="_blank" rel="noopener noreferrer nofollow">Nextcloud Hub</a> bring together several key areas of functionality:
+The recently launched [Nextcloud Hub](https://nextcloud.com/hub) brings together several key areas of functionality:
 
-* <a href="https://nextcloud.com/files" title="Nextcloud Hub" target="_blank" rel="noopener noreferrer nofollow">Nextcloud Files</a> - offers universal file access on desktop, mobile and web. Find files with powerful search, share your thoughts in comments or lock files until you are done with them. 
-* <a href="https://nextcloud.com/talk" title="Nextcloud Talk" target="_blank" rel="noopener noreferrer nofollow">Nextcloud Talk</a> - delivers on-premises, private audio/video conferencing and text chat through browser and mobile interfaces with integrated screen sharing and SIP integration.
-* <a href="https://nextcloud.com/groupware" title="Nextcloud Groupware" target="_blank" rel="noopener noreferrer nofollow">Nextcloud Groupware</a> - integrates Calendar, Contacts, Mail and other productivity features to help teams get their work done faster, easier and on your terms.
+* [Nextcloud Files](https://nextcloud.com/files) - offers universal file access on desktop, mobile and web. Find files with powerful search, share your thoughts in comments or lock files until you are done with them. 
+* [Nextcloud Talk](https://nextcloud.com/talk) - delivers on-premises, private audio/video conferencing and text chat through browser and mobile interfaces with integrated screen sharing and SIP integration.
+* [Nextcloud Groupware](https://nextcloud.com/groupware) - integrates Calendar, Contacts, Mail and other productivity features to help teams get their work done faster, easier and on your terms.
 
 **Similar or related projects:**
 
