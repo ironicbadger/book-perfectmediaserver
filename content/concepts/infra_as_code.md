@@ -27,3 +27,11 @@ Your server will never be "finished". It is a living, breathing manifestation of
 Storing configuration as code is a simple concept but requires some discipline - you have to commit. 
 
 For example, let's say you deploy a server using automation and then begin to make manual changes to it. Before long the code no longer reflects what is deployed and "configuration drift" begins to occur. Reconciliation can often be frustrating and time consuming. When adopting Infrastructure as Code, every single change should be made via a configuration management tool such as Ansible. This sounds daunting but the alternative is a special snowflake you are scared to touch. We've all had that install we're scared to format because we aren't sure quite what we'll lose if we do.
+
+# Ansible
+
+![ansible-logo](../images/ansible_logo_wide.png)
+
+Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code.
+
+# Terraform
