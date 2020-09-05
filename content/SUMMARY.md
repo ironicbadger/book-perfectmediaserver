@@ -18,7 +18,7 @@
 - [Installation Guide](./installation/overview.md)
   - [Installation FAQ](./installation/install_faq.md)
   - [Manual Install](./installation/manual_install.md)
-  - [Automated Install](./installation/ansible_install.md)
+  - [Automated Install](./installation/automated_install.md)
   - [Combine ZFS and MergerFS](./installation/combine_zfs_and_others.md)
 - [Post Install](./postinstall/postinstall_summary.md)
   - [Running apps in containers](./postinstall/running_apps_containers.md)
