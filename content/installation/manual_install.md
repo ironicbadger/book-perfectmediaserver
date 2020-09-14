@@ -43,9 +43,12 @@ mergerfs/now 2.30.0~ubuntu-focal amd64 [installed,local]
 
 > Due to some differences in the way in which Ubuntu server and desktop present drives to us under `/dev/disk/by-id` we recommend using the Ubuntu desktop variant.
 
+TODO: Info
 You may now connect your data disks. 
 
-In order to use these disks we must now do what is known as 'mounting' them. This means that we are providing the OS with instructions on how to read or write data to a specific drive. The most common way of configuring drives for use with PMS is to create one large partition which spans the entire drive, format it to `ext4` or `xfs` and then mount it.
+In order to use these disks our OS needs to mount them. *Mounting* means that we are providing the OS with instructions on how to read or write data to a specific drive. The most common way of configuring drives for use with PMS is to create one large partition which spans the entire drive, format it to `ext4` or `xfs` and then mount it.
+
+The filesystem wars have raged for decades and there is no right or wrong one to pick. However, we recommended either `ext4` or `xfs` to keep things simple. XFS allegedly works slightly better with large files (like media files) but there is not much in it. Red Hat have a great article on choosing your filesystem [here](https://access.redhat.com/articles/3129891).
 
 ### Identifying drives
 
@@ -57,10 +60,10 @@ The output will look something like this:
 
 ```
 root@cartman:~# ls /dev/disk/by-id
-ata-HGST_HDN728080ALE604_R6GPPDTY                     ata-WDC_WD100EMAZ-00WJTA0_2YJ373DD        wwn-0x5000cca26dc0718d
-ata-SPCC_Solid_State_Disk_BA1B0788165300033582        ata-WDC_WD100EMAZ-00WJTA0_2YJ373DD-part1  wwn-0x5000cca26dc0718d-part1
-ata-SPCC_Solid_State_Disk_BA1B0788165300033582-part1  ata-WDC_WD100EMAZ-00WJTA0_2YJ373DD-part9  wwn-0x5000cca26dc07484
-ata-WDC_WD100EMAZ-00WJTA0_2YJ2S3AD                    ata-WDC_WD100EMAZ-00WJTA0_2YJ7E2VD        wwn-0x5000cca26dc07484-part1
+ata-HGST_HDN728080ALE604_R6GPPDTY                     ata-WDC_WD100EMAZ-00WJTA0_2YJ373DD
+ata-SPCC_Solid_State_Disk_BA1B0788165300033582        ata-WDC_WD100EMAZ-00WJTA0_2YJ373DD-part1
+ata-SPCC_Solid_State_Disk_BA1B0788165300033582-part1  ata-WDC_WD100EMAZ-00WJTA0_2YJ373DD-part9
+ata-WDC_WD100EMAZ-00WJTA0_2YJ2S3AD                    ata-WDC_WD100EMAZ-00WJTA0_2YJ7E2VD
 ata-WDC_WD100EMAZ-00WJTA0_2YJ2S3AD-part1              wwn-0x5000cca263c9dc2c
 ```
 
@@ -110,9 +113,7 @@ Use the following sequence to create one large partition spanning the entire dri
 
 #### Create a filesystem
 
-The filesystem wars have raged for decades and there is no right or wrong one to pick. However, we recommended either `ext4` or `xfs` to keep things simple. XFS allegedly works slightly better with large files (like media files) but there is not much in it. Red Hat have a great article on choosing your filesystem [here](https://access.redhat.com/articles/3129891).
-
-Create a filesystem thus:
+Create an `ext4` filesystem thus:
 
     mkfs.ext4 /dev/sdX1
 
