@@ -39,7 +39,7 @@ Listing... Done
 mergerfs/now 2.30.0~ubuntu-focal amd64 [installed,local]
 ```
 
-## Mounting drives manually
+# Mounting drives manually
 
 > Due to some differences in the way in which Ubuntu server and desktop present drives to us under `/dev/disk/by-id` we recommend using the Ubuntu desktop variant.
 
@@ -52,7 +52,7 @@ The filesystem wars have raged for decades and there is no right or wrong one to
 
 Remember with MergerFS you are able to safely mix and match filesystems and drive sizes.
 
-### Identifying drives
+## Identifying drives
 
 List all drives in a system with:
 
@@ -78,7 +78,7 @@ lrwxrwxrwx 1 root root 9 Sep  9 23:08 /dev/disk/by-id/ata-HGST_HDN728080ALE604_R
 
 Therefore, we can ascertain that `/dev/sdc` is mapped to this physical drive. Never use `/dev/sdX` as a long term solution for drive identification as these identifiers can and do change without warning due to other hardware changes, kernel upgrades, etc. The `/dev/disk/by-id` identifier is tied to that specific piece of hardware by drive model and serial number and will therefore never change.
 
-### Brand new drive
+## Brand new drive
 
 Before we create a partition on a brand new disk, ensure you have 'burned it in' as we cover under *Hardware Considerations* -> (New Drive Burn-In[../hardware/new_drive_burnin.md].
 
@@ -113,7 +113,7 @@ Use the following sequence to create one large partition spanning the entire dri
 * `w` - writes the changes made thus far
     * Until this point, gdisk has been non-destructive  
 
-#### Create a filesystem
+### Create a filesystem
 
 Create an `ext4` filesystem thus:
 
@@ -121,7 +121,7 @@ Create an `ext4` filesystem thus:
 
 Congratulations! Your new drive is now formatted and ready to store data. Move onto the next section 'Existing drive' to learn how to mount it (make it available to the OS for use).
 
-### Existing drive
+## Existing drive
 
 [Identify](#identifying-drives) the existing drive and take note of the partition you wish to mount. This is usually displayed as `-part1` using `/dev/disk/by-id`. Ensure you have the correct supporting libraries for your filesystem installed such as `xfsprogs` for XFS and then mount the drive manually like so:
 
