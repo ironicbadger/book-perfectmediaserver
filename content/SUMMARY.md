@@ -9,6 +9,7 @@
   - [Infrastructure as Code](./concepts/infra_as_code.md)
   - [Linux](./concepts/linux.md)
   - [Hypervisors](./concepts/hypervisors.md)
+  - [Containers](./concepts/containers.md)
   - [MergerFS](./concepts/mergerfs.md)
   - [SnapRAID](./concepts/snapraid.md)
   - [ZFS on Linux](./concepts/zfsonlinux.md)
