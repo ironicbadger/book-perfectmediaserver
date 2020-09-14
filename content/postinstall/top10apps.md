@@ -14,6 +14,8 @@ Storing and serving files is all well and good but with a little effort, we can 
 
 Surely this pick needs no introduction. Think of Nextcloud somewhat like your own personal Dropbox replacement. Although, that is doing it a disservice because Nextcloud supports *many* more features than Dropbox. Nextcloud provide a [demo](https://nextcloud.com/try) if you'd like to try before you "buy" (Nextcloud is free).
 
+![nextcloud-banner](../images/nextcloud-banner.png)
+
 The recently launched [Nextcloud Hub](https://nextcloud.com/hub) brings together several key areas of functionality:
 
 * [Nextcloud Files](https://nextcloud.com/files) - offers universal file access on desktop, mobile and web. Find files with powerful search, share your thoughts in comments or lock files until you are done with them. 
