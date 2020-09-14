@@ -150,7 +150,7 @@ Next we need to create an entry in `/etc/fstab`.
 
 This file tells your OS how, where and which disks to mount. It looks a bit complex but an fstab entry is actually quite simple and breaks down to `<device> <mountpoint> <filesystem> <options> <dump> <fsck>` - [fstab documentation](https://wiki.archlinux.org/index.php/fstab).
 
-Here's what your `/etc/fstab` file might look like with 4 data disks and 1 parity drive for SnapRAID. Note that MergerFS does *not* mount the parity drive, it only mounts `/mnt/disk*`. Remember, MergerFS has *nothing to do* with parity which is what we have SnapRAID for.
+Here's what your `/etc/fstab` file might look like with 4 data disks and 1 parity drive for SnapRAID. Note that MergerFS does *not* mount the parity drive, it only mounts `/mnt/disk*`. MergerFS has *nothing to do* with parity, that is what we use SnapRAID for.
 
 ```
 ##/etc/fstab example
