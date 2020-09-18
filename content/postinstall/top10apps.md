@@ -51,7 +51,9 @@ blah
 
 A speed test tool that can be run on your LAN or hosted in the cloud. This is available as a Self-Hosted [container](https://hub.docker.com/r/linuxserver/librespeed) as well as at [librespeed.org](https://librespeed.org/).
 
+<div class="d-flex justify-content-center">
 ![librespeed](../images/librespeed.png)
+</div>
 
 This is really useful when you want to test the speed between your current system and wherever you are running this container. Want to test the speed between you and your cloud based VPS? Or check that your wifi is performing well?
 
