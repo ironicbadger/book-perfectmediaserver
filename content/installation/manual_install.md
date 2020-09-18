@@ -196,7 +196,7 @@ A NAS or server is no good without being able to access the data remotely. There
 
 ## Samba
 
-There are two parts to samba. The client and the server.
+There are two parts to samba. The [client](#samba-client) and the [server](#samba-server). Let's begin by configuring the server side of things.
 
 ### Samba server
 
