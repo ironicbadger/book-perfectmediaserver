@@ -182,6 +182,8 @@ If you had any existing files on your data disks they will be visible under `/mn
 
 # SnapRAID installation
 
+SnapRAID is 
+
 ## Compilation
 
 ## Configuration
@@ -190,7 +192,68 @@ If you had any existing files on your data disks they will be visible under `/mn
 
 # Network File Sharing
 
+A NAS or server is no good without being able to access the data remotely. There are two primary methods for sharing files over the network. Samba for Windows / Mac / Linux and NFS for Linux.
+
 ## Samba
+
+There are two parts to samba. The client and the server.
+
+### Samba server
+
+As is often the case the [Arch Wiki](https://wiki.archlinux.org/index.php/samba#Server) has a fantastically detailed entry on setting up and configuring a samba server. Despite the fact that PMS recommends Ubuntu, much of the configuration information provided by the Arch Wiki is valid for use by us.
+
+If you just want the most brain dead simple way to get going with samba, here it is. 
+
+* First, install samba:
+
+    apt install samba
+
+* Next, create a file at `/etc/samba/smb.conf` with the following contents (adapt this for your needs):
+
+```
+[global]
+  workgroup = KTZ
+  server string = cartman
+  security = user
+  guest ok = yes
+  map to guest = Bad Password
+  log file = /var/log/samba/%m.log
+  max log size = 50
+  printcap name = /dev/null
+  load printers = no
+
+# Samba Shares
+[home]
+  comment = alex home folder
+  path = /home/alex
+  browseable = yes
+  read only = no
+  guest ok = no
+
+[storage]
+  comment = Primary Storage
+  path = /mnt/storage
+  browseable = yes
+  read only = no
+  guest ok = yes
+```
+
+* Samba requires setting a password separately from that used to login. You may use an existing user or create a new one for this purpose.
+
+    smbpasswd -a user
+
+* Existing samba users can be listed with:
+
+    pdbedit -L -v
+
+* Once you're happy, ensure the samba service is restarted with:
+
+    systemctl restart smbd
+
+* Verify using: 
+    * Linux - `sudo smbstatus`
+    * Mac - Open finder, press Command+K and enter `smb://serverip/storage`
+    * Windows - Open file explorer and enter into the address bar `\\serverip\share`
 
 ## NFS
 
