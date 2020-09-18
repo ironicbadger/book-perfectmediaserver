@@ -16,7 +16,7 @@ We are using Ubuntu Linux which means docker installation is easy and well suppo
 
 ## docker-compose installation
 
-`docker-compose` is a tool for defining and running multiple containers at once using docker. Installing compose is optional but highly recommended as it drastically simplifies container lifecycle management. Defining, starting, stopped and upgrading dozens of containers all at once is reduced to a single command. See [containers](../containers/containers.md#docker-compose) for more information.
+`docker-compose` is a tool for defining and running multiple containers at once using docker. Installing compose is optional but highly recommended as it drastically simplifies container lifecycle management. Defining, starting, stopped and upgrading dozens of containers all at once is reduced to a single command. See [containers](../concepts/containers.md#docker-compose) for more information.
 
 Installation instructions for Linux can be found [here](https://docs.docker.com/compose/install/#install-compose-on-linux-systems).
 
@@ -242,7 +242,7 @@ apt install samba
   guest ok = yes
 ```
 
-* Samba requires setting a password separately from that used to login. You may use an existing user or create a new one for this purpose.
+* Samba requires setting a password separately from that used for login. You may use an existing user or create a new one for this purpose.
 
 ```
 smbpasswd -a user
