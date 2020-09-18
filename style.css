@@ -25,14 +25,17 @@ body {
 
 .sidetoc {
     padding-top: var(--page-padding);
+    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
 }
 
 .pagetoc {
     position: fixed;
+    max-width: 240px;
 }
 
 .pagetoc a:first-child {
-    padding-left: 10px;
+    padding-left: 0px;
 }
 
 .pagetoc a {
