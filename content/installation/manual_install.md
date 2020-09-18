@@ -208,7 +208,9 @@ If you just want the most brain dead simple way to get going with samba, here it
 
 * First, install samba:
 
-    apt install samba
+```
+apt install samba
+```
 
 * Next, create a file at `/etc/samba/smb.conf` with the following contents (adapt this for your needs):
 
@@ -242,15 +244,21 @@ If you just want the most brain dead simple way to get going with samba, here it
 
 * Samba requires setting a password separately from that used to login. You may use an existing user or create a new one for this purpose.
 
-    smbpasswd -a user
+```
+smbpasswd -a user
+```
 
 * Existing samba users can be listed with:
 
-    pdbedit -L -v
+```
+pdbedit -L -v
+```
 
 * Once you're happy, ensure the samba service is restarted with:
 
-    systemctl restart smbd
+```
+systemctl restart smbd
+```
 
 * Verify using a client: 
     * Linux - `sudo smbstatus`
@@ -263,7 +271,9 @@ Here's the relevant [Arch Wiki](https://wiki.archlinux.org/index.php/samba#Clien
 
 * First you'll need to install the samba client for your OS:
 
-    apt install smbclient
+```
+apt install smbclient
+```
 
 * Now we can verify the available shares thus:
 
@@ -297,7 +307,9 @@ Once again, the [Arch Wiki](https://wiki.archlinux.org/index.php/NFS#Installatio
 
 * Install the required server package with:
 
-    apt install nfs-kernel-server
+```
+apt install nfs-kernel-server
+```
 
 * Create a list of exports in `/etc/exports` that looks something like this:
 
@@ -307,8 +319,12 @@ Once again, the [Arch Wiki](https://wiki.archlinux.org/index.php/NFS#Installatio
 
 * If the NFS server is running you will need to re-export for changes to take effect. Do that with:
 
-    exportfs -arv
+```
+exportfs -arv
+```
 
 * View the current exports with:
 
-    exportfs -v
+```
+exportfs -v
+```
