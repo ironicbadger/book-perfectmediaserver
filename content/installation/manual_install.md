@@ -250,10 +250,63 @@ If you just want the most brain dead simple way to get going with samba, here it
 
     systemctl restart smbd
 
-* Verify using: 
+* Verify using a client: 
     * Linux - `sudo smbstatus`
     * Mac - Open finder, press Command+K and enter `smb://serverip/storage`
     * Windows - Open file explorer and enter into the address bar `\\serverip\share`
 
+### Samba client
+
+Here's the relevant [Arch Wiki](https://wiki.archlinux.org/index.php/samba#Client) entry for configuring clients. This section assumes mounting is occuring on a Linux CLI based system (a Pi or something like that).
+
+* First you'll need to install the samba client for your OS:
+
+    apt install smbclient
+
+* Now we can verify the available shares thus:
+
+```
+alex@cartman:~$ smbclient -L cartman -U%
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	home            Disk      alex home folder
+	opt             Disk      opt directory
+	storage         Disk      Storage on cartman
+	photos          Disk      Storage on cartman
+	IPC$            IPC       IPC Service (cartman)
+SMB1 disabled -- no workgroup available
+```
+
+### Mounting Samba in /etc/fstab
+
+On a remote system you might wish to mount your samba shares permanently using `/etc/fstab`. Ensure that client has its equivalent of `smbclient` installed (see above) and then put the following into the `/etc/fstab` file:
+
+```
+//SERVER/sharename /mnt/mountpoint cifs _netdev,username=myuser,password=mypass 0 0
+```
+
+Ensure the mountpoint exists. If it doesn't, create it with `mkdir /mnt/mountpoint`. Also make sure to set `smbpasswd` as described above.
+
+
 ## NFS
 
+Once again, the [Arch Wiki](https://wiki.archlinux.org/index.php/NFS#Installation) is the best place to dive _deep_ on NFS, and there really is a lot of great information in that article. There isn't much call for NFS these days for home use and we've found most users can get by with only samba quite happily. If you need NFS, you'll know it.
+
+* Install the required server package with:
+
+    apt install nfs-kernel-server
+
+* Create a list of exports in `/etc/exports` that looks something like this:
+
+```
+/mnt/storage        192.168.1.0/24(rw,sync,crossmnt,fsid=0)
+```
+
+* If the NFS server is running you will need to re-export for changes to take effect. Do that with:
+
+    exportfs -arv
+
+* View the current exports with:
+
+    exportfs -v
