@@ -10,13 +10,13 @@ This section covers manual installation of the key components required to run a 
 
 # docker installation
 
-For our container runtime, we'll be using docker. There are other options in this space but for now, docker is the most mature - \[for more info see **[containers](../concepts/containers.md)]\]**.
+For our container runtime, we'll be using docker. There are other options in this space but for now, docker is the most mature.
 
 We are using Ubuntu Linux which means docker installation is easy and well supported. See the [docker documentation](https://docs.docker.com/engine/install/ubuntu/) for full details.
 
 ## docker-compose installation
 
-`docker-compose` is a tool for defining and running multiple containers at once using docker. Installing compose is optional but highly recommended as it drastically simplifies container lifecycle management - \[for more info see **[containers](../concepts/containers.md)]\]**.
+`docker-compose` is a tool for defining and running multiple containers at once using docker. Installing compose is optional but highly recommended as it drastically simplifies container lifecycle management. Defining, starting, stopped and upgrading dozens of containers all at once is reduced to a single command. See [containers](../containers/containers.md#docker-compose) for more information.
 
 Installation instructions for Linux can be found [here](https://docs.docker.com/compose/install/#install-compose-on-linux-systems).
 
