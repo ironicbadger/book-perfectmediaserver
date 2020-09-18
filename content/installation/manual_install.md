@@ -78,7 +78,7 @@ lrwxrwxrwx 1 root root 9 Sep  9 23:08 /dev/disk/by-id/ata-HGST_HDN728080ALE604_R
 
 Therefore, we can ascertain that `/dev/sdc` is mapped to this physical drive. Never use `/dev/sdX` as a long term solution for drive identification as these identifiers can and do change without warning due to other hardware changes, kernel upgrades, etc. The `/dev/disk/by-id` identifier is tied to that specific piece of hardware by drive model and serial number and will therefore never change.
 
-## Brand new drive
+## Brand new drives
 
 Before we create a partition on a brand new disk, ensure you have 'burned it in' as we cover under *Hardware Considerations* -> [New Drive Burn-In](../hardware/new_drive_burnin.md).
 
@@ -113,7 +113,7 @@ Use the following sequence to create one large partition spanning the entire dri
 * `w` - writes the changes made thus far
     * Until this point, gdisk has been non-destructive  
 
-### Create a filesystem
+### Filesystem creation
 
 Create an `ext4` filesystem thus:
 
@@ -121,7 +121,7 @@ Create an `ext4` filesystem thus:
 
 Congratulations! Your new drive is now formatted and ready to store data. Move onto the next section 'Existing drive' to learn how to mount it (make it available to the OS for use).
 
-## Existing drive
+## Existing drives
 
 [Identify](#identifying-drives) the existing drive and take note of the partition you wish to mount. This is usually displayed as `-part1` using `/dev/disk/by-id`. Ensure you have the correct supporting libraries for your filesystem installed such as `xfsprogs` for XFS and then mount the drive manually like so:
 
@@ -134,7 +134,7 @@ Verify that the drive mounted and displays the correct size as expected:
     Filesystem                        Size  Used Avail Use% Mounted on
     /dev/sdc1                         7.3T  2.8T  4.6T  38% /mnt/manualdiskmounttest
 
-## Create mountpoints
+## Mountpoints
 
 Assuming the previous test went well, it's time to come up with a mountpoint naming scheme. We recommended `/mnt/diskN` because it makes the `fstab` entry for MergerFS simpler thanks to wildcard support (more on this shortly). For example:
 
@@ -144,7 +144,7 @@ Assuming the previous test went well, it's time to come up with a mountpoint nam
 
 We also just created `/mnt/storage` in addition to our data disk mountpoints of `/mnt/disk1`, `/mnt/disk2` and so on. `/mnt/storage` will be used by MergerFS to 'pool' or 'merge' our data disks.
 
-## Creating fstab entries
+## fstab entries
 
 Next we need to create an entry in `/etc/fstab`. 
 
