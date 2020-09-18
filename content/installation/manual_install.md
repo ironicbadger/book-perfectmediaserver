@@ -192,7 +192,9 @@ SnapRAID is
 
 # Network File Sharing
 
-A NAS or server is no good without being able to access the data remotely. There are two primary methods for sharing files over the network. Samba for Windows / Mac / Linux and NFS for Linux.
+A NAS or file server is no good without being able to access the data remotely. We're not talking about remotely like over the internet remotely here though, instead we're talking about other computers on your LAN. Raspberry Pis, Media Players (Kodi, for example), etc. You can find more information on remote file access over the internet in the [remote access](../remoteaccess/overview.md) and [Top 10 Self-Hosted apps list](../postinstall/top10apps.md#nextcloud).
+
+There are two primary methods for sharing files over the network. Samba for Windows / Mac / Linux and NFS for Linux.
 
 ## Samba
 
