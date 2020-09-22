@@ -190,16 +190,17 @@ SnapRAID doesn't provide packages so we have to compile it from source ourselves
 
 A few years ago I wrote a container that builds SnapRAID from source in a container and spits out a compiled `.deb` package that is compatible with Ubuntu (and other Debian distros).
 
-[This](https://github.com/IronicBadger/docker-snapraid) git repository contains the script required, here's how it works.
+[This](https://github.com/IronicBadger/docker-snapraid) git repository contains the script required, here's how to utilise it.
 
 ```
+# these steps assume a valid, working docker installation
 apt update && apt install git -y
 mkdir ~/tmp && cd ~/tmp
 git clone https://github.com/IronicBadger/docker-snapraid
 cd docker-snapraid
 chmod +x build.sh
 ./build.sh
-sudo dpkg -i snapraid*.deb
+sudo dpkg -i build/snapraid-from-source.deb
 ```
 
 Verify successful installation with:
@@ -210,6 +211,8 @@ snapraid v11.5 by Andrea Mazzoleni, http://www.snapraid.it
 ```
 
 You may now safely delete the `docker-snapraid` folder from `~/tmp` and repeat this process whenever SnapRAID releases an update. This isn't a regular occurrence so don't get too excited.
+
+If you see that there is a new release and I haven't updated this container, ping me on Twitter @IronicBadger and I'll take care of it.
 
 ## Configuration
 
