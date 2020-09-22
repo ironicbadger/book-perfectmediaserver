@@ -182,9 +182,34 @@ If you had any existing files on your data disks they will be visible under `/mn
 
 # SnapRAID installation
 
-SnapRAID is 
+[SnapRAID](https://www.snapraid.it/) is a backup program for disk arrays. It stores parity information of your data and it recovers from up to six disk failures. It is mainly targeted for a home media center, with a lot of big files that rarely change.
 
 ## Compilation
+
+SnapRAID doesn't provide packages so we have to compile it from source ourselves. In the old days, before containers, this meant installing a bunch of build dependencies on your system. But this is inefficient and, whilst unlikely, can lead to conflicts with other packages on your system.
+
+A few years ago I wrote a container that builds SnapRAID from source in a container and spits out a compiled `.deb` package that is compatible with Ubuntu (and other Debian distros).
+
+[This] git repository contains the script required, here's how it works.
+
+```
+apt update && apt install git -y
+mkdir ~/tmp && cd ~/tmp
+git clone https://github.com/IronicBadger/docker-snapraid
+cd docker-snapraid
+chmod +x build.sh
+./build.sh
+sudo dpkg -i snapraid*.deb
+```
+
+Verify successful installation with:
+
+``` 
+alex@cartman:~$ snapraid --version
+snapraid v11.5 by Andrea Mazzoleni, http://www.snapraid.it
+```
+
+You may now safely delete the `docker-snapraid` folder from `~/tmp` and repeat this process whenever SnapRAID releases an update. This isn't a regular occurrence so don't get too excited.
 
 ## Configuration
 
