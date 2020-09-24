@@ -16,9 +16,9 @@ Storing and serving files is all well and good but with a little effort, we can 
 <img alt="plex-banner" src="../images/plex.png">
 </div>
 
-[Plex](https://plex.tv) is the reason you're even reading this page. It's what got me interested in Linux in the first place and is somewhat of a gateway drug for self-hosting. It can be run as a [container](https://hub.docker.com/r/plexinc/pms-docker/). However, it is not open source and there are doubts about the future of Plex as they continue to add features and streaming services that [no-one asked for](https://www.reddit.com/r/PleX/comments/e62nbt/how_do_you_disable_the_new_plex_movies_feature/). Luckily, there are other options available.
+[Plex](https://plex.tv) is the reason you're even reading this page. It's what got me interested in Linux in the first place and is somewhat of a gateway drug for self-hosting and can be run as a [container](https://hub.docker.com/r/plexinc/pms-docker/). However, it is not open source and there are doubts about the future of Plex as they continue to add features and streaming services that [no-one asked for](https://www.reddit.com/r/PleX/comments/e62nbt/how_do_you_disable_the_new_plex_movies_feature/). Luckily, there are other options available.
 
-Jellyfin and Emby are two notable players in this space (playback on any device) but we should also mention Kodi. For me, Plex is still the best of the bunch with the slickest UI and the most features. Despite this the progress being made by Emby and Jellyfin recently is very impressive and these are both projects to watch closely.
+Jellyfin and Emby are two notable players in this space (playback on any device) but we should also mention Kodi. Kodi is great is your use case is local only as automated media transcoding for the target device isn't something that this software does. But, for me, Plex is still the best overall in this category. It has the slickest UI and the most features. Despite this, the progress being made by Emby and Jellyfin recently is very impressive and these are both projects to watch closely.
 
 **Similar or related projects:**
 
