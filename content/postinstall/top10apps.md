@@ -13,7 +13,7 @@ Storing and serving files is all well and good but with a little effort, we can 
 [Plex](https://plex.tv) brings together all the media that matters to you. Your personal collection will look beautiful alongside stellar streaming content. Enjoy Live TV & DVR, a growing catalog of great web shows, news, and podcasts. It's finally possible to enjoy all the media you love in a single app, on any device, no matter where you are.
 
 <div class="d-flex justify-content-center">
-![plex-image](../images/plex.png)
+<img alt="plex-banner" src="../images/plex.png">
 </div>
 
 [Plex](https://plex.tv) is the reason you're even reading this page. It's what got me interested in Linux in the first place and is somewhat of a gateway drug for self-hosting. It can be run as a [container](https://hub.docker.com/r/plexinc/pms-docker/). However, it is not open source and there are doubts about the future of Plex as they continue to add features and streaming services that [no-one asked for](https://www.reddit.com/r/PleX/comments/e62nbt/how_do_you_disable_the_new_plex_movies_feature/). Luckily, there are other options available.
@@ -33,7 +33,7 @@ Jellyfin and Emby are two notable players in this space (playback on any device)
 Surely this pick needs no introduction. Think of Nextcloud somewhat like your own personal Dropbox replacement. Although, that is doing it a disservice because Nextcloud supports *many* more features than Dropbox. Nextcloud provide a [demo](https://nextcloud.com/try) if you'd like to try before you "buy" (Nextcloud is free).
 
 <div class="d-flex justify-content-center">
-![nextcloud-banner](../images/nextcloud-banner.png)
+<img alt="nextcloud-banner" src="../images/nextcloud-banner.png">
 </div>
 
 The recently launched [Nextcloud Hub](https://nextcloud.com/hub) brings together several key areas of functionality:
@@ -68,7 +68,7 @@ blah
 A speed test tool that can be run on your LAN or hosted in the cloud. This is available as a Self-Hosted [container](https://hub.docker.com/r/linuxserver/librespeed) as well as at [librespeed.org](https://librespeed.org/).
 
 <div class="d-flex justify-content-center">
-![librespeed](../images/librespeed.png)
+<img src="../images/librespeed.jpg">
 </div>
 
 This is really useful when you want to test the speed between your current system and wherever you are running this container. Want to test the speed between you and your cloud based VPS? Or check that your wifi is performing well?
