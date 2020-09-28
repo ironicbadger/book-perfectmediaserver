@@ -4,21 +4,54 @@ This section covers manual installation of the key components required to run a 
 
 # Ubuntu 20.04 Installation
 
-## User creation
+Installation of Ubuntu itself is documented by [Canonical](https://canonical.com/) (the company behind Ubuntu) on their [website](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
 
-+ GID and UID stuff
+Creating a bootable USB stick to install Linux from used to be a tricky thing. There is a [guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#1-overview) on the Ubuntu website for the official method but recently the [Ventoy](https://www.ventoy.net/en/index.html) project has made this process even easier. It's not perfect and some users have reported issues but it should work for 95+% of you.
+
+[Ventoy](https://www.ventoy.net/en/index.html) is magic. It turns a single USB drive into a 'universal' USB boot drive. Simply drop ISOs into the predetermined folder and you can boot them immediately. No messing with partition tables or `dd` or etcher, etc.
+
+> It is recommended to install Ubuntu Desktop, not Ubuntu Server, due to some weirdness in how drives are presented using `/dev/disk/by-id` in the server variant.
+
+There are a few options you have with regards to boot drive. The simplest option is buy a dedicated SSD for this purpose. Use this drive for the OS and temporary files (like in-progress file transfers) before moving them to your array. You might find putting your Plex metadata on an SSD such as this will help performance of library loading.
+
+Running the Gnome desktop on a server is a bit unnecessary as we'll manage this server 99% of the time via SSH. If you'd like to remove the desktop altogether, [here](https://askubuntu.com/questions/1233025/how-to-remove-gnome-shell-from-ubuntu-20-04-lts-to-install-other-desktop-environ) are some instructions on doing so from AskUbuntu. This step is *completely optional*.
+
+> Experimental ZFS on root support was added to 20.04 LTS. Need I say more about installing your server on an option marked as 'experimental' in the installer? OK, for clarity, don't!.
+
+Create a user as prompted by the installer and set a secure password. Once rebooted into the OS, it's time to start configuring the system ready to be the Perfect Media Server.
 
 # docker installation
 
 For our container runtime, we'll be using docker. There are other options in this space but for now, docker is the most mature.
 
-We are using Ubuntu Linux which means docker installation is easy and well supported. See the [docker documentation](https://docs.docker.com/engine/install/ubuntu/) for full details.
+We are using Ubuntu which means docker installation is simple and well supported. See the [docker documentation](https://docs.docker.com/engine/install/ubuntu/) for full details.
 
 ## docker-compose installation
 
 `docker-compose` is a tool for defining and running multiple containers at once using docker. Installing compose is optional but highly recommended as it drastically simplifies container lifecycle management. Defining, starting, stopped and upgrading dozens of containers all at once is reduced to a single command. See [containers](../concepts/containers.md#docker-compose) for more information.
 
 Installation instructions for Linux can be found [here](https://docs.docker.com/compose/install/#install-compose-on-linux-systems).
+
+## User creation
+
+We need to find the user and group IDs for the user we plan to run our containers with. This is important because otherwise we will end up with file permissions errors.
+
+The [LinuxServer.io](https://www.linuxserver.io/) team are one of the most popular containerisation projects on the web. They provide a whole [fleet](https://fleet.linuxserver.io/) of containers that cater to pretty much every need the average Media Server enthusiast has. They pioneered a system of defining `PUID` and `PGID` in container environment variables to ensure permissions issues became a thing of the past.
+
+### Understanding PGID and PUID
+
+With containers, when using volumes (`-v` flags) permissions issues can arise between the host OS and the container. Avoid this issue by running containers which support the user `PUID` and group `PGID` flags (like the ones from LinuxServer.io).
+
+Ensure any volume directories on the host are owned by the same user you specify and any permissions issues will vanish like magic.
+
+In this instance `PUID=1000` and `PGID=1000`, to find yours use `id username` as below:
+
+```
+  $ id username
+    uid=1000(dockeruser) gid=1000(dockergroup) groups=1000(dockergroup)
+```
+
+You can check the owner of a specific file or directory with `ls -la`.
 
 # MergerFS installation
 
