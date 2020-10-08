@@ -298,14 +298,14 @@ Next, you will need to ensure you have set up your configuration file for SnapRA
 
 Edit the configuration file for snapraid-runner, a default is provided at `/opt/snapraid-runner/snapraid-runner.conf.example`. The following parameters are of the most interest when configuring this file:
 
-    * `config = /etc/snapraid.conf` - Ensure this points to where your `snapraid.conf` file is stored
-    * `deletethreshold = 250` - abort operation if there are more deletes than this, set to -1 to disable
-    * `touch = True` - This improves the SnapRAID capability to recognize moved and copied files as it makes the timestamp almost unique, removing possible duplicates.
-    * `[email]` - If you are using gmail you will need to generate an [app specific password](https://support.google.com/accounts/answer/185833?hl=en).
-    * `[scrub]` - Configure periodic data verification features
-        * `enabled = True`
-        * `percentage = 22` - The % of the array to scrub
-        * `older-than = 8` - Only scrub data if older than this number of days
+* `config = /etc/snapraid.conf` - Ensure this points to where your `snapraid.conf` file is stored
+* `deletethreshold = 250` - abort operation if there are more deletes than this, set to -1 to disable
+* `touch = True` - This improves the SnapRAID capability to recognize moved and copied files as it makes the timestamp almost unique, removing possible duplicates.
+* `[email]` - If you are using gmail you will need to generate an [app specific password](https://support.google.com/accounts/answer/185833?hl=en).
+* `[scrub]` - Configure periodic data verification features
+    * `enabled = True`
+    * `percentage = 22` - The % of the array to scrub
+    * `older-than = 8` - Only scrub data if older than this number of days
 
 
 Finally, create a cronjob to automatically run `snapraid-runner`. You will want to ensure the file SnapRAID is checking parity for are not changing during this time. Ideally at something like 4 or 5am, it would be a good idea to also temporarily disable any services that write to your storage during this time - that is optional though.
