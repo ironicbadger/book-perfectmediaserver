@@ -320,7 +320,7 @@ With cron, it is a good idea to be as explicit as possible when it comes to file
 
 ## Healthchecks
 
-[https://healthchecks.io/](https://healthchecks.io/) notifies you when your nightly backups, weekly reports, cron jobs and scheduled tasks don't run on time. It is self-hostable in a [container](https://hub.docker.com/r/linuxserver/healthchecks) but that depends on that local system being up - I like to use this free hosted service for this purpose.
+[https://healthchecks.io/](https://healthchecks.io/) notifies you when your nightly backups, weekly reports, cron jobs and scheduled tasks don't run on time. It is self-hostable in a [container](https://hub.docker.com/r/linuxserver/healthchecks) but that depends on that local system being up - I like to use this free hosted service for this purpose. They provide up to 20 checks free for hobbyists.
 
 <div class="d-flex justify-content-center">
 <img alt="healthchecks" src="../images/healthchecks.png">
