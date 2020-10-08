@@ -249,7 +249,83 @@ If you see that there is a new release and I haven't updated this container, pin
 
 ## Configuration
 
+You should familiarise yourself with the documentation provided by [SnapRAID](https://www.snapraid.it/manual) with regards to all the configuration options available.
+
+In it's most simple form, you must provide a configuration file to SnapRAID to tell it where to store parity, which disks are your data disks and what types of files to calculate parity for or not. Here's a very stripped down basic version of a config file:
+
+```
+# SnapRAID configuration file
+
+# Parity location(s)
+1-parity /mnt/parity1/snapraid.parity
+2-parity /mnt/parity2/snapraid.parity
+
+# Content file location(s)
+content /var/snapraid.content
+content /mnt/disk1/.snapraid.content
+content /mnt/disk2/.snapraid.content
+
+# Data disks
+data d1 /mnt/disk1
+data d2 /mnt/disk3
+data d3 /mnt/disk4
+
+# Excludes hidden files and directories
+exclude *.unrecoverable
+exclude /tmp/
+exclude /lost+found/
+exclude downloads/
+exclude appdata/
+exclude *.!sync
+```
+
+A full list of typical excludes can be found in Github [here](https://github.com/IronicBadger/infra/blob/master/group_vars/cartman.yaml#L719).
+
 ## Automating Parity Calculation
+
+As SnapRAID is designed to work by taking snapshots we must configure these to be calculated at regular intervals. We could just create a very simple cronjob and execute `snapraid sync` as part of that process, but there are a few situations we want a little more smarts than that.
+
+[snapraid-runner](https://github.com/Chronial/snapraid-runner) is a reliable way to add some logic gates to execution of SnapRAID. 
+
+To install, beging by cloning the git repo:
+
+```
+git clone https://github.com/Chronial/snapraid-runner.git /opt/snapraid-runner
+```
+
+Next, you will need to ensure you have set up your configuration file for SnapRAID as detailed above.
+
+
+Edit the configuration file for snapraid-runner, a default is provided at `/opt/snapraid-runner/snapraid-runner.conf.example`. The following parameters are of the most interest when configuring this file:
+
+    * `config = /etc/snapraid.conf` - Ensure this points to where your `snapraid.conf` file is stored
+    * `deletethreshold = 250` - abort operation if there are more deletes than this, set to -1 to disable
+    * `touch = True` - This improves the SnapRAID capability to recognize moved and copied files as it makes the timestamp almost unique, removing possible duplicates.
+    * `[email]` - If you are using gmail you will need to generate an [app specific password](https://support.google.com/accounts/answer/185833?hl=en).
+    * `[scrub]` - Configure periodic data verification features
+        * `enabled = True`
+        * `percentage = 22` - The % of the array to scrub
+        * `older-than = 8` - Only scrub data if older than this number of days
+
+
+Finally, create a cronjob to automatically run `snapraid-runner`. You will want to ensure the file SnapRAID is checking parity for are not changing during this time. Ideally at something like 4 or 5am, it would be a good idea to also temporarily disable any services that write to your storage during this time - that is optional though.
+
+```
+root@cartman: crontab -e
+
+00 01 * * * python3 /opt/snapraid-runner/snapraid-runner.py -c /opt/snapraid-runner/snapraid-runner.conf && curl -fsS --retry 3 https://hc-ping.com/123-1103-xyz-abc-123 > /dev/null
+```
+
+With cron, it is a good idea to be as explicit as possible when it comes to file paths. Never rely on relative paths or the `PATH` variable. Perhaps you also noticed that there is a healthcheck configured at `hc-ping.com`.
+
+## Healthchecks
+
+[https://healthchecks.io/](https://healthchecks.io/) notifies you when your nightly backups, weekly reports, cron jobs and scheduled tasks don't run on time. It is self-hostable in a [container](https://hub.docker.com/r/linuxserver/healthchecks) but that depends on that local system being up - I like to use this free hosted service for this purpose.
+
+<div class="d-flex justify-content-center">
+<img alt="healthchecks" src="../images/healthchecks.png">
+</div>
+
 
 # Network File Sharing
 
