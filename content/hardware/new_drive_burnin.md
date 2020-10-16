@@ -4,7 +4,7 @@ That new hard drive. Should you trust it? Maybe.
 
 > Edit: This content was originally published on [https://blog.linuxserver.io](https://blog.linuxserver.io/2018/10/29/new-hard-drive-rituals/).
 
-Over the last 10 years that I've been messing around with Linux servers (hence the name of the site by the way there's been one thing above all else that's always required special care - hard drives. They are mechanical beasts just waiting to eat your data at any time. Entire businesses are built around their inherent (un)reliability. Backblaze make a point every quarter of publishing their hard drive reliability statistics because people (myself included) care about this stuff.
+Over the last 10 years that I've been messing around with Linux servers (hence the name of the site by the way there's been one thing above all else that's always required special care - hard drives. They are mechanical beasts just waiting to eat your data at any time. Entire businesses are built around their inherent (un)reliability. Backblaze make a point every quarter of [publishing their hard drive reliability statistics](https://www.backblaze.com/blog/backblaze-hard-drive-stats-q2-2020/) because people (myself included) care about this stuff.
 
 <div class="d-flex justify-content-center">
     <figure>
