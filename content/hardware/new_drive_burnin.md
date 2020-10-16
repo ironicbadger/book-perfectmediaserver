@@ -1,8 +1,8 @@
-# New Hard Drive burn-in
-
 That new hard drive. Should you trust it? Maybe.
 
 > Edit: This content was originally published on [https://blog.linuxserver.io](https://blog.linuxserver.io/2018/10/29/new-hard-drive-rituals/).
+
+# Introduction
 
 Over the last 10 years that I've been messing around with Linux servers (hence the name of the site by the way there's been one thing above all else that's always required special care - hard drives. They are mechanical beasts just waiting to eat your data at any time. Entire businesses are built around their inherent (un)reliability. Backblaze make a point every quarter of [publishing their hard drive reliability statistics](https://www.backblaze.com/blog/backblaze-hard-drive-stats-q2-2020/) because people (myself included) care about this stuff.
 
@@ -45,6 +45,8 @@ With this command, badblocks will perform 4 complete write and read cycles acros
     <i class="fa fa-info" style="font-size:24px;color:black"></i>
     The scripts used can be found on Github <a href="https://github.com/Spearfoot/disk-burnin-and-testing">here</a>.
 </div>
+
+# Burn-in script
 
 I use a script to wrap the execution from github user [spearfoot](https://github.com/Spearfoot/disk-burnin-and-testing). Make sure to read the readme before execution otherwise nothing will happen.
 
